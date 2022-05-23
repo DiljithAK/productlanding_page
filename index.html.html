@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Assignment1 Diljith A K</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: #e6ba6acb;
+        }
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        .topnav a:hover {
+            background-color: rgb(240, 12, 12);
+            color: black;
+        }
+        .topnav .search-container{
+            float: right;
+        }
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: rgb(57, 202, 238);
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+        .topnav .search-container button:hover {
+            background: rgb(12, 153, 189);
+        }    
+        section {
+            padding: 10vh 0;
+            position: relative;
+        }
+        .one {
+            background: blanchedalmond;
+            position: relative;
+            color: #000;
+        }
+        .intro {
+            max-width: 1300px;
+            margin: 40px auto 0 auto;
+            line-height: 1.65;
+            padding: 20px 50px;
+            display: flex;
+        }
+        .one img {
+            position: relative;
+            z-index: 101;
+        }
+        .one h4 {
+            position: relative;
+            z-index: 101;
+            font-size: 26px;
+            font-weight: 80;
+        }
+        .one p {
+            position: relative;
+            z-index: 101;
+            font-size: 12px;
+        }
+        .one form {
+            position: relative;
+            z-index: 101;
+        }
+        #cart {
+            background-color: rgba(255, 166, 0, 0.603);
+			border: solid black;
+			border-radius: 5px;
+			color: black;
+			padding: 10px 25px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 15px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+        #buy {
+            background-color: rgba(236, 102, 13, 0.63);
+			border: solid black;
+			border-radius: 5px;
+			color: black;
+			padding: 10px 25px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 15px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+        }
+        #cart:hover{
+            background-color: rgba(255, 0, 0, 0.719);
+        }
+        #buy:hover{
+            background-color: rgba(255, 0, 0, 0.719);
+        }
+        .one::after,
+        .one::before {
+            position: absolute;
+            content: '';
+            width: 100px;
+            height: 100px;
+            background: blanchedalmond;
+            bottom: -0.9em;
+            z-index: 100;
+        }
+        .one::before {
+            right: 50%;
+            transform: skew(0, 20deg);
+        }
+        .one::after {
+            left: 50%;
+            transform: skew(0, -20deg);
+        }
+        .two {
+            background: palevioletred;
+            position: relative;
+            z-index: 10;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vw), 0 100%);
+            margin-bottom: -10vw;
+        }
+        .details-about {
+            max-width: 1300px;
+            margin: 40px auto 0 auto;
+            line-height: 1.65;
+            padding: 20px 50px;
+            display: flex;
+        }
+        .three {
+            background: slateblue;
+            position: relative;
+        }
+        .back-button {
+			background-color: rgb(4, 4, 14);
+			border: solid black;
+			border-radius: 5px;
+			color: white;
+			padding: 10px 25px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 15px;
+            margin-top: 30px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		}
+        .back-button:hover {
+            background-color: rgb(8, 8, 153);
+        }
+        .bottom {
+            max-width: 1400px;
+            margin: 40px auto 0 auto;
+            display: flex;
+        }
+        .bottom a {
+            color: black;
+        }
+        .bottom-part {
+            padding-top: 20px;
+            padding-right: 100px;
+            padding-bottom: 20px;
+            padding-left: 100px;
+            margin: 20px;
+        }
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 12px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+            .details-about {
+                width: 100%;
+                margin: auto;
+                line-height: 1.65;
+                padding: 20px 50px;
+            }
+            .bottom {
+                max-width: 1400px;
+                margin: 40px auto 0 auto;
+                display: flex;
+            }
+            .intro {
+            max-width: 1300px;
+            margin: 40px auto 0 auto;
+            line-height: 1.65;
+            padding: 20px 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="top">
+        <div class="topnav">
+            <a href="#home"><i style="font-weight: bold; color: rgb(21, 19, 131);">e-Shop.com</i></a>
+            <a href="#details">Product Details</a>
+            <a href="#contact">Contact</a>
+            <a href="#footer">Go to bottom</a>
+            <div class="search-container">
+                <form action="#">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="one">
+            <div class=intro>
+                <div>
+                    <h1>Stainless Steel Water Bottle, (Steel, 750ml)</h1>
+                    <div>
+                        <img style="padding: 15px;" width=300px height=330px src="https://i.ibb.co/fGFjhWQ/bottle.jpg" alt="bottle" border="0">
+                    </div>
+                    <div>
+                        <h4><s>&#8377; 480</s> &#8377; 349</h4>
+                        <p style="font-weight: bold; bottom: 15px;">27% OFF</p>
+                        <p style="bottom: 10px;"><a style="color: brown;" href="delivery-details">FREE delivery</a>: Friday, Jan 28</p>
+                        <form action="#">
+                            <label>Quantity</label>
+                            <select name="quantity">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                            <button id="cart"type="submit">Add to cart</button>
+                            <button id="buy" type="submit">Buy Now</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="about">
+                    <h3 style="text-align: left; padding-left: 20px;">About this item</h3>
+                    <ul style="text-align: left;">
+                        <li>High Quality Stainless Steel</li>
+                        <li>Leak Proof and easy to Pour</li>
+                        <li>Strong and wider gauge for high durability</li>
+                        <li>Hassle-free maintenance, remains clean and rust proof</li>
+                        <li>Convenient size fits in the side pocket of school, trekking or office bag</li>
+                    </ul>
+                </div>
+            </div>        
+        </section>
+    </main>    
+    <section class="two">
+        <div class="details-about">
+            <div class="pd-details">
+                <h2 id="details" style="text-align: left;  padding-left: 20px;">Product Details</h2>
+                <ul style="text-align: left;">
+                    <li>Product Dimensions ‏ : ‎ 7.8 x 7.8 x 28 cm; 200 Grams</li>
+                    <li>Date First Available ‏ : ‎ 15 Jan 2022</li>
+                    <li>Manufacturer ‏ : ‎ Butterjump</li>
+                    <li>ASIN ‏ : ‎ B08DTTTM9Q</li>
+                    <li>Item model number ‏ : ‎ W5022F00023</li>                        
+                    <li>Country of Origin ‏ : ‎ India</li>
+                    <li>Manufacturer ‏ : ‎ Butterjump, Butterjump appliancese, chennai</li>
+                    <li>Packer ‏ : ‎ Butterjump Appliances Limited,chennai</li>
+                    <li>Item Weight ‏ : ‎ 200 g</li>
+                    <li>Item Dimensions LxWxH ‏ : ‎ 7.8 x 7.8 x 28 Centimeters</li>
+                    <li>Net Quantity ‏ : ‎ 1.00 Unit</li>
+                    <li>Included Components ‏ : ‎ 1 bottle</li>
+                    <li>Generic Name ‏ : ‎ Water Bottle</li>
+                </ul>
+            </div>
+            <div class="about">
+                <h3 style="text-align: left; padding-left: 20px;">About this item</h3>
+                <ul style="text-align: left;">
+                    <li>High Quality Stainless Steel</li>
+                    <li>Leak Proof and easy to Pour</li>
+                    <li>Strong and wider gauge for high durability</li>
+                    <li>Hassle-free maintenance, remains clean and rust proof</li>
+                    <li>Convenient size fits in the side pocket of school, trekking or office bag</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="three">
+        <div>
+            <a  class="back-button" href=#top>Back to top</a>
+        </div>
+        <div class="bottom" style="text-align: left;">
+            <div class="bottom-part" style="background: rgb(197, 195, 195);">
+                <h4>Get to Know Us</h4>
+                <a href=#aboutus>About Us</a><br>
+                <a href="#careers">Careers</a><br>
+                <a href="#e-shop-care">e-Shop Care</a><br>
+            </div>
+            <div class="bottom-part" style="background: rgb(161, 161, 161);">
+                <h4 id="contact">Connect with Us</h4>
+                <a href="www.facebook.com">Facebook</a><br>
+                <a href="www.twitter.com">Twitter</a><br>
+                <a href="www.instagram.com">Instagram</a><br>
+            </div>
+            <div class="bottom-part" style="background: rgb(121, 121, 121);">
+                <h4>Let Us Help You</h4>
+                <a href="#account">Your Account</a><br>
+                <a href="#returns">Return Centre</a><br>
+                <a href="#purchase-protection">100% Purchase Protection</a><br>
+                <a href="#app">e-Shop App Download</a><br>
+                <a href="#assist"> e-Shop Assist Download</a><br>
+                <a href="#help">Help</a><br>
+            </div>
+        </div>
+    </section>
+    <footer id="footer" style="background: black; color: white;">
+        &copy; e-Shop.com
+    </footer>
+</body>
+</html>
